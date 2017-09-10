@@ -17,21 +17,30 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
 
-# set up headless chrome webdriver for feature specs
-chrome_bin = ENV.fetch('GOOGLE_CHROME_SHIM', nil) # This is from the heroku bin defined in app.json
-chrome_opts = if chrome_bin
-                # CI is running on heroku
-                { chromeOptions: { 'binary' => chrome_bin } }
-              else
-                # CI is running locally or in Travis
-                { chromeOptions: { args: %w[headless disable-gpu] } }
-              end
+  # set up headless chrome webdriver for feature specs
+  chrome_bin = ENV.fetch('GOOGLE_CHROME_SHIM', nil) # This is from the heroku bin defined in app.json
+  chrome_opts = if chrome_bin
+                  # CI is running on heroku
+                  { chromeOptions: { 'binary' => chrome_bin } }
+                else
+                  # CI is running locally or in Travis
+                  { chromeOptions: { args: %w[headless disable-gpu] } }
+                end
 
-Capybara.register_driver :headless_chrome do |app|
-  Capybara::Selenium::Driver.new(
-    app,
-    browser: :chrome,
-    desired_capabilities: Selenium::WebDriver::Remote::Capabilities.chrome(chrome_opts)
-  )
+  Capybara.register_driver :headless_chrome do |app|
+    Capybara::Selenium::Driver.new(
+      app,
+      browser: :chrome,
+      desired_capabilities: Selenium::WebDriver::Remote::Capabilities.chrome(chrome_opts)
+    )
+  end
+
+  # if no JS is needed use rack specs (which run faster)
+  config.before(:each, type: :system) do
+    driven_by :rack_test
+  end
+
+  config.before(:each, type: :system, js: true) do
+    driven_by :headless_chrome
+  end
 end
-Capybara.javascript_driver = :headless_chrome
