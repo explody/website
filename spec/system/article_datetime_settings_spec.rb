@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature "Setting and changing an articles published_at date" do
+feature "Setting and changing an articles published_at date", :type => :system do
   let(:admin) do
     create(:user, username: 'user1', password: 'c'*31)
   end

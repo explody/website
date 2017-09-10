@@ -1,3 +1,50 @@
+GIT
+  remote: https://github.com/rspec/rspec-core.git
+  revision: 18d0e0e5bf471ff46048bd4a1266e20cefee2217
+  branch: master
+  specs:
+    rspec-core (3.7.0.pre)
+      rspec-support (= 3.7.0.pre)
+
+GIT
+  remote: https://github.com/rspec/rspec-expectations.git
+  revision: d7c74ef3843866acf3165fc500b2c6f1a3c290ee
+  branch: master
+  specs:
+    rspec-expectations (3.7.0.pre)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (= 3.7.0.pre)
+
+GIT
+  remote: https://github.com/rspec/rspec-mocks.git
+  revision: 8b010b7a774570ceca86fb7bf6b0cc9da9a28eb0
+  branch: master
+  specs:
+    rspec-mocks (3.7.0.pre)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (= 3.7.0.pre)
+
+GIT
+  remote: https://github.com/rspec/rspec-rails.git
+  revision: 9118e2c62b86ef2103d132ac88409bddca187d5c
+  branch: master
+  specs:
+    rspec-rails (3.7.0.pre)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (= 3.7.0.pre)
+      rspec-expectations (= 3.7.0.pre)
+      rspec-mocks (= 3.7.0.pre)
+      rspec-support (= 3.7.0.pre)
+
+GIT
+  remote: https://github.com/rspec/rspec-support.git
+  revision: 111879e6451c623fdc5d8921b79f2a57d9db64f0
+  branch: master
+  specs:
+    rspec-support (3.7.0.pre)
+
 GEM
   remote: https://rubygems.org/
   remote: https://rails-assets.org/
@@ -63,7 +110,6 @@ GEM
     childprocess (0.7.1)
       ffi (~> 1.0, >= 1.0.11)
     cocoon (1.2.10)
-    coderay (1.1.1)
     concurrent-ruby (1.0.5)
     dalli (2.7.6)
     diff-lcs (1.3)
@@ -78,23 +124,8 @@ GEM
     fast_stack (0.2.0)
     ffi (1.9.18)
     flamegraph (0.9.5)
-    formatador (0.2.5)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
-    guard (2.14.1)
-      formatador (>= 0.2.4)
-      listen (>= 2.7, < 4.0)
-      lumberjack (~> 1.0)
-      nenv (~> 0.1)
-      notiffany (~> 0.0)
-      pry (>= 0.9.12)
-      shellany (~> 0.0)
-      thor (>= 0.18.1)
-    guard-compat (1.2.1)
-    guard-rspec (4.7.3)
-      guard (~> 2.1)
-      guard-compat (~> 1.1)
-      rspec (>= 2.99.0, < 4.0)
     i18n (0.8.6)
     jquery-rails (4.3.1)
       rails-dom-testing (>= 1, < 3)
@@ -124,7 +155,6 @@ GEM
       ruby_dep (~> 1.2)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
-    lumberjack (1.0.12)
     mail (2.6.6)
       mime-types (>= 1.16, < 4)
     markdown_media (1.2.0)
@@ -137,19 +167,11 @@ GEM
     mini_mime (0.1.4)
     mini_portile2 (2.2.0)
     minitest (5.10.3)
-    nenv (0.3.0)
     nio4r (2.1.0)
     nokogiri (1.8.0)
       mini_portile2 (~> 2.2.0)
-    notiffany (0.1.1)
-      nenv (~> 0.1)
-      shellany (~> 0.0)
     pg (0.21.0)
     popper_js (1.11.1)
-    pry (0.10.4)
-      coderay (~> 1.1.0)
-      method_source (~> 0.8.1)
-      slop (~> 3.4)
     public_suffix (2.0.5)
     puma (3.10.0)
     rack (2.0.3)
@@ -192,27 +214,6 @@ GEM
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
     redis (4.0.0)
-    rspec (3.6.0)
-      rspec-core (~> 3.6.0)
-      rspec-expectations (~> 3.6.0)
-      rspec-mocks (~> 3.6.0)
-    rspec-core (3.6.0)
-      rspec-support (~> 3.6.0)
-    rspec-expectations (3.6.0)
-      diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.6.0)
-    rspec-mocks (3.6.0)
-      diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.6.0)
-    rspec-rails (3.6.1)
-      actionpack (>= 3.0)
-      activesupport (>= 3.0)
-      railties (>= 3.0)
-      rspec-core (~> 3.6.0)
-      rspec-expectations (~> 3.6.0)
-      rspec-mocks (~> 3.6.0)
-      rspec-support (~> 3.6.0)
-    rspec-support (3.6.0)
     ruby_dep (1.5.0)
     rubypants (0.6.0)
     rubyzip (1.2.1)
@@ -233,7 +234,6 @@ GEM
     selenium-webdriver (3.5.2)
       childprocess (~> 0.5)
       rubyzip (~> 1.0)
-    shellany (0.0.1)
     simplecov (0.15.0)
       docile (~> 1.1.0)
       json (>= 1.8, < 3)
@@ -241,11 +241,8 @@ GEM
     simplecov-html (0.10.2)
     sitemap_generator (5.3.1)
       builder (~> 3.0)
-    slop (3.6.0)
     spring (2.0.2)
       activesupport (>= 4.2)
-    spring-commands-rspec (1.0.4)
-      spring (>= 0.9.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
       spring (>= 1.2, < 3.0)
@@ -293,7 +290,6 @@ DEPENDENCIES
   factory_girl_rails
   fast_stack
   flamegraph
-  guard-rspec
   jquery-rails
   jquery-ui-rails
   kaminari
@@ -311,7 +307,11 @@ DEPENDENCIES
   rails-assets-tether (>= 1.1.0)!
   rails-controller-testing
   redis
-  rspec-rails
+  rspec-core!
+  rspec-expectations!
+  rspec-mocks!
+  rspec-rails!
+  rspec-support!
   rubypants
   sass-rails
   scenic (~> 1.4)
@@ -319,7 +319,6 @@ DEPENDENCIES
   simplecov
   sitemap_generator
   spring
-  spring-commands-rspec
   spring-watcher-listen (~> 2.0.0)
   stackprof
   sterile

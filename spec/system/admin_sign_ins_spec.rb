@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature "Signing in as an admin" do
+feature "Signing in as an admin" , :type => :system do
   background do
     create(:user, username: 'user1', password: 'c'*31)
   end

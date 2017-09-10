@@ -49,10 +49,14 @@ gem "dalli"
 group :development, :test do
   gem "byebug", platform: :mri
   gem "nokogiri"
-  gem "rspec-rails"
+  # gem "rspec-rails"
+  gem 'rspec-rails', git: 'https://github.com/rspec/rspec-rails.git', branch: 'master'
+  %w[rspec-core rspec-expectations rspec-mocks rspec-rails rspec-support].each do |lib|
+    gem lib, :git => "https://github.com/rspec/#{lib}.git", :branch => 'master'
+  end
   gem "rails-controller-testing"
-  gem "guard-rspec"
-  gem "spring-commands-rspec"
+  # gem "guard-rspec"
+  # gem "spring-commands-rspec"
   gem "simplecov", :require => false
   gem "factory_girl_rails"
   gem 'capybara'
